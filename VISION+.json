@@ -58,8 +58,8 @@
       },
       {
         "domain_suffix": [
-          "id1.nekotun.com",
-          "id1.nekotun.com",
+          "jala.iptunnels.com",
+          "img.email3.vidio.com",
           "id1.nekotun.com"
         ],
         "server": "direct-dns",
@@ -131,7 +131,8 @@
       "tag": "Best Latency",
       "outbounds": [
         "🇲🇨 trojan grpc Jala",
-        "🇲🇨 vmess grpc Jala"
+        "🇲🇨 vmess grpc Jala",
+        "🇲🇨 trojan ws Jala"
       ],
       "url": "https://detectportal.firefox.com/success.txt",
       "interval": "1m0s"
@@ -189,6 +190,34 @@
         "idle_timeout": "15s",
         "ping_timeout": "15s",
         "permit_without_stream": false
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "🇲🇨 trojan ws Jala",
+      "type": "trojan",
+      "server": "img.email3.vidio.com",
+      "server_port": 443,
+      "password": "342d29270d2e96b4",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "jala.iptunnels.com",
+        "insecure": true,
+        "disable_sni": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/buy-trojan-ws-pm-telegram-at-synricha",
+        "headers": {
+          "Host": "jala.iptunnels.com"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "domain_strategy": "ipv4_only"
     },
