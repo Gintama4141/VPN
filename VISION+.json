@@ -130,14 +130,14 @@
       "type": "urltest",
       "tag": "Best Latency",
       "outbounds": [
-        "trojan grpc Jala",
-        "vmess grpc Jala"
+        "🇲🇨 trojan grpc Jala",
+        "🇲🇨 vmess grpc Jala"
       ],
       "url": "https://detectportal.firefox.com/success.txt",
       "interval": "1m0s"
     },
     {
-      "tag": "trojan grpc Jala",
+      "tag": "🇲🇨 trojan grpc Jala",
       "type": "trojan",
       "server": "img.email3.vidio.com",
       "server_port": 443,
@@ -163,7 +163,7 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "vmess grpc Jala",
+      "tag": "🇲🇨 vmess grpc Jala",
       "type": "vmess",
       "server": "img.email3.vidio.com",
       "server_port": 443,
