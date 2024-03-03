@@ -58,7 +58,9 @@
       },
       {
         "domain_suffix": [
-          "free.corazonvip.cfd"
+          "id1.nekotun.com",
+          "id1.nekotun.com",
+          "id1.nekotun.com"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -128,17 +130,44 @@
       "type": "urltest",
       "tag": "Best Latency",
       "outbounds": [
-        "CTN1"
+        "trojan grpc Jala",
+        "vmess grpc Jala"
       ],
       "url": "https://detectportal.firefox.com/success.txt",
       "interval": "1m0s"
     },
     {
-      "tag": "CTN1",
+      "tag": "trojan grpc Jala",
+      "type": "trojan",
+      "server": "img.email3.vidio.com",
+      "server_port": 443,
+      "password": "d926c20a6883a221",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "jala.iptunnels.com",
+        "insecure": true,
+        "disable_sni": false
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "buy-trojan-grpc-pm-telegram-at-synricha",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s",
+        "permit_without_stream": false
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "vmess grpc Jala",
       "type": "vmess",
       "server": "img.email3.vidio.com",
       "server_port": 443,
-      "uuid": "a3c51fc8-52ce-415c-b8c6-c4d656149384",
+      "uuid": "33fb607c-2c82-4bf4-a424-8bd844ca78ff",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -150,18 +179,16 @@
       },
       "tls": {
         "enabled": true,
-        "server_name": "free.corazonvip.cfd",
+        "server_name": "jala.iptunnels.com",
         "insecure": true,
         "disable_sni": false
       },
       "transport": {
-        "type": "ws",
-        "path": "/vmess",
-        "headers": {
-          "Host": "free.corazonvip.cfd"
-        },
-        "max_early_data": 0,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
+        "type": "grpc",
+        "service_name": "buy-vmess-grpc-pm-telegram-at-synricha",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s",
+        "permit_without_stream": false
       },
       "domain_strategy": "ipv4_only"
     },
