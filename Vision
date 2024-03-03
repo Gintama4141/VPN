@@ -1,0 +1,262 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "warn",
+    "timestamp": true
+  },
+  "experimental": {
+    "clash_api": {
+  "external_controller": "127.0.0.1:9090",
+  "external_ui": "",
+  "external_ui_download_url": "",
+  "external_ui_download_detour": "",
+  "secret": "",
+  "default_mode": "",
+
+  // Deprecated
+
+  "store_mode": false,
+  "store_selected": false,
+  "store_fakeip": false,
+  "cache_file": "",
+  "cache_id": ""
+    }
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "Internet-dns",
+        "address": "1.0.0.1",
+        "strategy": "ipv4_only",
+        "detour": "Internet"
+      },
+      {
+        "tag": "Best Latency-dns",
+        "address": "1.1.1.1",
+        "strategy": "ipv4_only",
+        "detour": "Best Latency"
+      },
+      {
+        "tag": "direct-dns",
+        "address": "local",
+        "strategy": "ipv4_only",
+        "detour": "direct"
+      },
+      {
+        "tag": "block-dns",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": [
+          ".arpa.",
+          ".arpa"
+        ],
+        "server": "block-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "domain_suffix": [
+          "sg1.nekotun.com",
+          "sg1.nekotun.com",
+          "sg1.nekotun.com"
+        ],
+        "server": "direct-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "network": "udp",
+        "port": 443,
+        "server": "block-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "outbound": "Internet",
+        "server": "Internet-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "outbound": "Best Latency",
+        "server": "Best Latency-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "outbound": "direct",
+        "server": "direct-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "outbound": "any",
+        "server": "direct-dns",
+        "rewrite_ttl": 20
+      }
+    ],
+    "reverse_mapping": true,
+    "strategy": "ipv4_only",
+    "independent_cache": true,
+    "disable_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "tun0",
+      "inet4_address": "172.19.0.1/30",
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "endpoint_independent_nat": true,
+      "sniff": true
+    },
+    {
+      "listen": "0.0.0.0",
+      "listen_port": 2080,
+      "sniff": true,
+      "tag": "mixed-in",
+      "type": "mixed"
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "Internet",
+      "outbounds": [
+        "Best Latency"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "Best Latency",
+      "outbounds": [
+        "AWS1",
+        "AWS2",
+        "AWS3"
+      ],
+      "url": "https://detectportal.firefox.com/success.txt",
+      "interval": "1m0s"
+    },
+    {
+      "tag": "AWS1",
+      "type": "vmess",
+      "server": "img.email3.vidio.com",
+      "server_port": 443,
+      "uuid": "317abdb0-7bc4-464e-aa27-f68b6bf1e998",
+      "security": "auto",
+      "alter_id": 0,
+      "global_padding": false,
+      "authenticated_length": true,
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "sg1.nekotun.com",
+        "insecure": true,
+        "disable_sni": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tunnelvmess",
+        "headers": {
+          "Host": "sg1.nekotun.com"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "AWS2",
+      "type": "vmess",
+      "server": "img.email3.vidio.com",
+      "server_port": 80,
+      "uuid": "317abdb0-7bc4-464e-aa27-f68b6bf1e998",
+      "security": "auto",
+      "alter_id": 0,
+      "global_padding": false,
+      "authenticated_length": true,
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tunnelvmess",
+        "headers": {
+          "Host": "sg1.nekotun.com"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "AWS3",
+      "type": "vmess",
+      "server": "img.email3.vidio.com",
+      "server_port": 443,
+      "uuid": "317abdb0-7bc4-464e-aa27-f68b6bf1e998",
+      "security": "auto",
+      "alter_id": 0,
+      "global_padding": false,
+      "authenticated_length": true,
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "sg1.nekotun.com",
+        "insecure": true,
+        "disable_sni": false
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "tunnelvmess-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s",
+        "permit_without_stream": false
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "override_android_vpn": true,
+    "final": "Internet",
+    "geoip": {
+      "download_url": "https://github.com/malikshi/sing-box-geo/releases/latest/download/geoip.db",
+      "download_detour": "Best Latency"
+    },
+    "geosite": {
+      "download_url": "https://github.com/malikshi/v2ray-rules-dat/releases/latest/download/geosite.db",
+      "download_detour": "Best Latency"
+    },
+    "rules": [
+      {
+        "outbound": "dns-out",
+        "port": [
+          53
+        ]
+      }
+    ]
+  }
+}
