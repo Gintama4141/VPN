@@ -58,9 +58,9 @@
       },
       {
         "domain_suffix": [
-          "id1.nekotun.com",
-          "id1.nekotun.com",
-          "id1.nekotun.com"
+          "sg1.nekotun.com",
+          "sg1.nekotun.com",
+          "sg1.nekotun.com"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -130,19 +130,19 @@
       "type": "urltest",
       "tag": "Best Latency",
       "outbounds": [
-        "CTN1",
-        "CTN2",
-        "CTN3"
+        "AWS1",
+        "AWS2",
+        "AWS3"
       ],
       "url": "https://detectportal.firefox.com/success.txt",
       "interval": "1m0s"
     },
     {
-      "tag": "CTN1",
+      "tag": "AWS1",
       "type": "vmess",
       "server": "img.email3.vidio.com",
       "server_port": 443,
-      "uuid": "421c5020-c7b7-4260-9c72-c337bff9db54",
+      "uuid": "317abdb0-7bc4-464e-aa27-f68b6bf1e998",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -154,7 +154,7 @@
       },
       "tls": {
         "enabled": true,
-        "server_name": "id1.nekotun.com",
+        "server_name": "sg1.nekotun.com",
         "insecure": true,
         "disable_sni": false
       },
@@ -162,7 +162,7 @@
         "type": "ws",
         "path": "/tunnelvmess",
         "headers": {
-          "Host": "id1.nekotun.com"
+          "Host": "sg1.nekotun.com"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -170,11 +170,11 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "CTN2",
+      "tag": "AWS2",
       "type": "vmess",
       "server": "img.email3.vidio.com",
       "server_port": 80,
-      "uuid": "421c5020-c7b7-4260-9c72-c337bff9db54",
+      "uuid": "317abdb0-7bc4-464e-aa27-f68b6bf1e998",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -188,7 +188,7 @@
         "type": "ws",
         "path": "/tunnelvmess",
         "headers": {
-          "Host": "id1.nekotun.com"
+          "Host": "sg1.nekotun.com"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -196,11 +196,11 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "CTN3",
+      "tag": "AWS3",
       "type": "vmess",
       "server": "img.email3.vidio.com",
       "server_port": 443,
-      "uuid": "421c5020-c7b7-4260-9c72-c337bff9db54",
+      "uuid": "317abdb0-7bc4-464e-aa27-f68b6bf1e998",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -212,7 +212,7 @@
       },
       "tls": {
         "enabled": true,
-        "server_name": "id1.nekotun.com",
+        "server_name": "sg1.nekotun.com",
         "insecure": true,
         "disable_sni": false
       },
