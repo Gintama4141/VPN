@@ -60,7 +60,7 @@
         "domain_suffix": [
           "id1.nekotun.com",
           "id1.nekotun.com",
-          "id1.nekotun.com"
+          "jala.iptunnels.com"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -174,7 +174,7 @@
       "type": "vmess",
       "server": "img.email3.vidio.com",
       "server_port": 80,
-      "uuid": "421c5020-c7b7-4260-9c72-c337bff9db54",
+      "uuid": "3b64cd93-ea05-4fe2-81ee-1c9c9d94a7e0",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -188,7 +188,7 @@
         "type": "ws",
         "path": "/tunnelvmess",
         "headers": {
-          "Host": "id1.nekotun.com"
+          "Host": "jala.iptunnels.com"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -200,7 +200,7 @@
       "type": "vmess",
       "server": "img.email3.vidio.com",
       "server_port": 443,
-      "uuid": "421c5020-c7b7-4260-9c72-c337bff9db54",
+      "uuid": "6670ce64-a76d-450a-b4ee-3d446a276e1a",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -212,13 +212,13 @@
       },
       "tls": {
         "enabled": true,
-        "server_name": "id1.nekotun.com",
+        "server_name": "jala.iptunnels.com",
         "insecure": true,
         "disable_sni": false
       },
       "transport": {
         "type": "grpc",
-        "service_name": "tunnelvmess-grpc",
+        "service_name": "buy-vmess-ws-pm-telegram-at-synricha",
         "idle_timeout": "15s",
         "ping_timeout": "15s",
         "permit_without_stream": false
