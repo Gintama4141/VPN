@@ -132,7 +132,8 @@
       "outbounds": [
         "🇲🇨 trojan grpc Jala",
         "🇲🇨 vmess grpc Jala",
-        "🇲🇨 trojan ws Jala"
+        "🇲🇨 trojan ws Jala",
+        "🇲🇨 vless grpc Jala"
       ],
       "url": "https://detectportal.firefox.com/success.txt",
       "interval": "1m0s"
@@ -222,6 +223,34 @@
       "domain_strategy": "ipv4_only"
     },
     {
+      "tag": "🇲🇨 vless grpc Jala",
+      "type": "vless",
+      "server": "img.email3.vidio.com",
+      "server_port": 443,
+      "uuid": "f53fedd9-2d42-4d27-8755-0f4325c08c90",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "jala.iptunnels.com",
+        "insecure": true,
+        "disable_sni": false
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "buy-vless-grpc-pm-telegram-at-synricha",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s",
+        "permit_without_stream": false
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -255,4 +284,4 @@
       }
     ]
   }
-}
+      }
