@@ -59,8 +59,7 @@
       {
         "domain_suffix": [
           "jala.iptunnels.com",
-          "img.email3.vidio.com",
-          "id1.nekotun.com"
+          "img.email3.vidio.com"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
