@@ -349,7 +349,7 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "🇲🇨 trojan ws Jala",
+      "tag": "🇲🇨 trojan ws Jala1",
       "type": "trojan",
       "server": "img.email3.vidio.com",
       "server_port": 443,
