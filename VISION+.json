@@ -59,8 +59,7 @@
       {
         "domain_suffix": [
           "jala.iptunnels.com",
-          "img.email3.vidio.com",
-          "id1.nekotun.com"
+          "img.email3.vidio.com"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -349,7 +348,7 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "🇲🇨 trojan ws Jala",
+      "tag": "🇲🇨 trojan ws Jala1",
       "type": "trojan",
       "server": "img.email3.vidio.com",
       "server_port": 443,
