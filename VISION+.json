@@ -130,10 +130,11 @@
       "type": "urltest",
       "tag": "Best Latency",
       "outbounds": [
-        "🇲🇨 trojan grpc Jala",
+        "🇲🇨trojan grpc Jala",
         "🇲🇨 vmess grpc Jala",
         "🇲🇨 trojan ws Jala",
-        "🇲🇨 vless grpc Jala"
+        "🇲🇨vless grpc Jala",
+        "🇲🇨 vless ws Jala"
       ],
       "url": "https://detectportal.firefox.com/success.txt",
       "interval": "1m0s"
@@ -251,6 +252,36 @@
       "domain_strategy": "ipv4_only"
     },
     {
+      "tag": "🇲🇨 vless ws Jala",
+      "type": "vless",
+      "server": "img.email3.vidio.com",
+      "server_port": 443,
+      "uuid": "db9093a4-9a5b-4047-a8bd-83bdcf9ee545",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "jala.iptunnels.com",
+        "insecure": true,
+        "disable_sni": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/buy-vless-ws-pm-telegram-at-synricha",
+        "headers": {
+          "Host": "jala.iptunnels.com"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -284,4 +315,4 @@
       }
     ]
   }
-      }
+  }
