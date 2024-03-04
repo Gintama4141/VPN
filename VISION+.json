@@ -130,7 +130,7 @@
       "type": "urltest",
       "tag": "Best Latency",
       "outbounds": [
-        "🇲🇨trojan grpc Jala",
+        "🇲🇨 trojan grpc Jala",
         "🇲🇨 vmess grpc Jala",
         "🇲🇨 trojan ws Jala",
         "🇲🇨 vless grpc Jala",
