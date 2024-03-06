@@ -130,13 +130,11 @@
       "tag": "Best Latency",
       "outbounds": [
         "🇲🇨 trojan grpc Jala",
-        "🇲🇨 vmess grpc Jala",
         "🇲🇨 trojan ws Jala",
-        "🇲🇨 vless grpc Jala",
-        "🇲🇨 vless ws Jala",
+        "🇲🇨 vmess grpc Jala",
         "🇲🇨 vmess ws Jala",
-        "🇲🇨 vmess ws Jala1",
-        "🇲🇨 trojan ws Jala1"
+        "🇲🇨 vless grpc Jala",
+        "🇲🇨 vless ws Jala"
       ],
       "url": "https://detectportal.firefox.com/success.txt",
       "interval": "1m0s"
@@ -164,6 +162,34 @@
         "idle_timeout": "15s",
         "ping_timeout": "15s",
         "permit_without_stream": false
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "🇲🇨 trojan ws Jala",
+      "type": "trojan",
+      "server": "img.email3.vidio.com",
+      "server_port": 443,
+      "password": "ca5eccf207c7a18b",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "jala.iptunnels.com",
+        "insecure": true,
+        "disable_sni": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/buy-trojan-ws-pm-telegram-at-synricha",
+        "headers": {
+          "Host": "jala.iptunnels.com"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "domain_strategy": "ipv4_only"
     },
@@ -198,11 +224,15 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "🇲🇨 trojan ws Jala",
-      "type": "trojan",
+      "tag": "🇲🇨 vmess ws Jala",
+      "type": "vmess",
       "server": "img.email3.vidio.com",
       "server_port": 443,
-      "password": "342d29270d2e96b4",
+      "uuid": "2613fe24-80b3-4c37-8093-54857c1ac178",
+      "security": "auto",
+      "alter_id": 0,
+      "global_padding": false,
+      "authenticated_length": true,
       "multiplex": {
         "enabled": false,
         "protocol": "smux",
@@ -216,7 +246,7 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/buy-trojan-ws-pm-telegram-at-synricha",
+        "path": "/buy-vmess-ws-pm-telegram-at-synricha",
         "headers": {
           "Host": "jala.iptunnels.com"
         },
@@ -258,7 +288,7 @@
       "type": "vless",
       "server": "img.email3.vidio.com",
       "server_port": 443,
-      "uuid": "db9093a4-9a5b-4047-a8bd-83bdcf9ee545",
+      "uuid": "35b34aeb-79d7-40a9-97f9-82d30a731478",
       "flow": "",
       "packet_encoding": "xudp",
       "multiplex": {
@@ -275,98 +305,6 @@
       "transport": {
         "type": "ws",
         "path": "/buy-vless-ws-pm-telegram-at-synricha",
-        "headers": {
-          "Host": "jala.iptunnels.com"
-        },
-        "max_early_data": 0,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "domain_strategy": "ipv4_only"
-    },
-    {
-      "tag": "🇲🇨 vmess ws Jala",
-      "type": "vmess",
-      "server": "img.email3.vidio.com",
-      "server_port": 443,
-      "uuid": "2613fe24-80b3-4c37-8093-54857c1ac178",
-      "security": "auto",
-      "alter_id": 0,
-      "global_padding": false,
-      "authenticated_length": true,
-      "multiplex": {
-        "enabled": false,
-        "protocol": "smux",
-        "max_streams": 32
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "jala.iptunnels.com",
-        "insecure": true,
-        "disable_sni": false
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/buy-vmess-ws-pm-telegram-at-synricha",
-        "headers": {
-          "Host": "jala.iptunnels.com"
-        },
-        "max_early_data": 0,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "domain_strategy": "ipv4_only"
-    },
-    {
-      "tag": "🇲🇨 vmess ws Jala1",
-      "type": "vmess",
-      "server": "img.email3.vidio.com",
-      "server_port": 443,
-      "uuid": "313a0ee5-2d0b-4a6c-8908-ee33ced987d8",
-      "security": "auto",
-      "alter_id": 0,
-      "global_padding": false,
-      "authenticated_length": true,
-      "multiplex": {
-        "enabled": false,
-        "protocol": "smux",
-        "max_streams": 32
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "jala.iptunnels.com",
-        "insecure": true,
-        "disable_sni": false
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/buy-vmess-ws-pm-telegram-at-synricha",
-        "headers": {
-          "Host": "jala.iptunnels.com"
-        },
-        "max_early_data": 0,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "domain_strategy": "ipv4_only"
-    },
-    {
-      "tag": "🇲🇨 trojan ws Jala1",
-      "type": "trojan",
-      "server": "img.email3.vidio.com",
-      "server_port": 443,
-      "password": "d32be56586c3a4d8",
-      "multiplex": {
-        "enabled": false,
-        "protocol": "smux",
-        "max_streams": 32
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "jala.iptunnels.com",
-        "insecure": true,
-        "disable_sni": false
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/buy-trojan-ws-pm-telegram-at-synricha",
         "headers": {
           "Host": "jala.iptunnels.com"
         },
@@ -409,4 +347,4 @@
       }
     ]
   }
-    }
+}
